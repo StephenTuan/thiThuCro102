@@ -7,12 +7,18 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "json-server": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
+    "@react-native/new-app-screen": "0.80.2",
+    "@reduxjs/toolkit": "^2.8.2",
+    "json-server": "^1.0.0-beta.3",
     "react": "19.1.0",
     "react-native": "0.80.2",
-    "@react-native/new-app-screen": "0.80.2"
+    "react-native-image-picker": "^8.2.1",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

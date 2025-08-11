@@ -1,0 +1,28 @@
+{
+  "XeMay": [
+    {
+      "id": "1",
+      "ten_xe_PH1234": "Honda Wave Alpha",
+      "mau_sac": "Đỏ",
+      "gia_ban": 18000000,
+      "mo_ta": "Xe số phổ thông tiết kiệm nhiên liệu",
+      "hinh_anh": "https://cdn.honda.com.vn/motorbikes/October2022/s3SJYuZ0D1jXfhLXjPKm.png"
+    },
+    {
+      "id": "2",
+      "ten_xe_PH1234": "Yamaha Exciter 155",
+      "mau_sac": "Xanh",
+      "gia_ban": 52000000,
+      "mo_ta": "Xe côn tay thể thao",
+      "hinh_anh": "https://yamaha-motor.com.vn/wp-content/uploads/2020/12/Exciter-155-GP.png"
+    },
+    {
+      "id": "3",
+      "ten_xe_PH1234": "Suzuki Satria F150",
+      "mau_sac": "Đen",
+      "gia_ban": 55000000,
+      "mo_ta": "Xe côn tay thể thao nhẹ",
+      "hinh_anh": "https://suzuki.com.vn/images/homepage/2023/satria/satria-f150-fi-den-mo.png"
+    }
+  ]
+}

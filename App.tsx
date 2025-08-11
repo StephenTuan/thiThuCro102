@@ -1,27 +1,33 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * XeMay App
+ * Ứng dụng quản lý xe máy sử dụng Redux
  *
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React from 'react';
+import { StatusBar, StyleSheet, useColorScheme, View, SafeAreaView } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './src/redux/store';
+import TodoScreen from './src/screens/todoScreen';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <TodoScreen />
+      </SafeAreaView>
+    </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f5f5f5',
   },
 });
 

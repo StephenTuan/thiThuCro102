@@ -1,52 +1,87 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Ứng dụng Quản lý Xe Máy
 
-# Getting Started
+Ứng dụng React Native sử dụng Redux để quản lý danh sách xe máy.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Tính năng
 
-## Step 1: Start Metro
+- Hiển thị danh sách xe máy
+- Thêm, sửa, xóa xe máy
+- Lọc xe máy theo giá
+- Chọn ảnh từ thư viện hoặc chụp ảnh mới
+- Kết nối với API (json-server)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Cài đặt
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+1. Clone repository
+2. Cài đặt dependencies:
 
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```bash
+npm install
 ```
 
-## Step 2: Build and run your app
+3. Cài đặt json-server (nếu chưa có):
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+npm install -g json-server
+```
 
-### Android
+## Chạy ứng dụng
 
-```sh
-# Using npm
+1. Chạy API server:
+
+```bash
+npm run api
+```
+
+2. Chạy Metro server:
+
+```bash
+npm start
+```
+
+3. Chạy ứng dụng React Native (trong terminal khác):
+
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
+# hoặc
+npm run ios
 ```
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Nếu chạy trên iOS, cần cài đặt CocoaPods dependencies:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
+```bash
 bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
 bundle exec pod install
 ```
+
+## Cấu trúc thư mục
+
+```
+src/
+  ├── api/            # API services
+  ├── assets/         # Hình ảnh, tài nguyên
+  ├── redux/          # Redux store
+  │   ├── actions/    # Action creators
+  │   ├── reducers/   # Reducers
+  │   └── store/      # Store configuration
+  └── screens/        # Màn hình ứng dụng
+```
+
+## Yêu cầu đề bài
+
+1. Tạo API cho ứng dụng bằng json-server hoặc mockapi hoặc nodejs (1 điểm)
+   - Resource: XeMay với các thuộc tính: ten_xe (string), mau_sac (string), gia_ban (number), mo_ta (string), hinh_anh (string)
+   - Tên các thuộc tính trong resource phải có mã sinh viên
+
+2. Tạo ứng dụng reactnative sử dụng Redux với các yêu cầu sau:
+   - Màn hình chính hiển thị danh sách xe, trên đầu màn hình có hiển thị Banner quảng cáo tự chọn. Danh sách và banner tạo component riêng. (2đ)
+   - Trên màn hình chính có nút thêm, bấm vào sẽ hiển thị màn hình thêm mới, các ô nhập text và nút bấm có sử dụng component tùy chỉnh. Thêm được dữ liệu vào API (2đ)
+   - Xây dựng chức năng sửa (sửa được dữ liệu trên API) (2đ)
+   - Xây dựng chức năng xóa (xóa được trên API) (1đ)
+   - Ứng dụng sử dụng từ 3 hiệu ứng trở lên (tự chọn) (1đ)
+   - Ứng dụng có chọn ảnh hoặc chụp ảnh (1đ)
 
 For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
