@@ -6,7 +6,7 @@
       "mau_sac": "Đỏ",
       "gia_ban": 18000000,
       "mo_ta": "Xe số phổ thông tiết kiệm nhiên liệu",
-      "hinh_anh": "https://cdn.honda.com.vn/motorbikes/October2022/s3SJYuZ0D1jXfhLXjPKm.png"
+      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "mau_sac": "Xanh",
       "gia_ban": 52000000,
       "mo_ta": "Xe côn tay thể thao",
-      "hinh_anh": "https://yamaha-motor.com.vn/wp-content/uploads/2020/12/Exciter-155-GP.png"
+      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
     },
     {
       "id": "3",
@@ -22,7 +22,25 @@
       "mau_sac": "Đen",
       "gia_ban": 55000000,
       "mo_ta": "Xe côn tay thể thao nhẹ",
-      "hinh_anh": "https://suzuki.com.vn/images/homepage/2023/satria/satria-f150-fi-den-mo.png"
+      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
+    },
+    {
+      "id": "1754900702178",
+      "ten_xe_PH1234": "Xsr",
+      "mau_sac": "Black",
+      "gia_ban": 100000000,
+      "mo_ta": "Okkkkkk",
+      "hinh_anh": "file:///data/user/0/com.thithu/cache/rn_image_picker_lib_temp_14a787b0-5657-4aa2-b366-6969dea4f9bb.webp",
+      "createdAt": "2025-08-11T08:25:02.178Z"
+    },
+    {
+      "id": "1754900725781",
+      "ten_xe_PH1234": "Ok",
+      "mau_sac": "Ok",
+      "gia_ban": 1972,
+      "mo_ta": "Hhhhhhh",
+      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg",
+      "createdAt": "2025-08-11T08:25:25.781Z"
     }
   ]
 }

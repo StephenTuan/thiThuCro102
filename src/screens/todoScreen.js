@@ -5,9 +5,7 @@ import {
   FlatList,
   StyleSheet,
   TouchableOpacity,
-  TextInput,
   Image,
-  Button,
   Alert,
   ScrollView,
   ActivityIndicator
@@ -21,48 +19,15 @@ import {
   fetchTodosFromApi 
 } from '../redux/actions/todoAction';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import {
+  Banner,
+  CustomInput,
+  CustomButton,
+  TodoItem,
+  FilterButtons
+} from '../components/ui';
 
-// Banner Component
-const Banner = () => {
-  return (
-    <View style={styles.bannerContainer}>
-      {/* <Text style={styles.bannerText}>Danh sách xe máy</Text> */}
-      <Image 
-        source={require('../../assets/banner.jpg')} 
-        style={styles.bannerImage}
-        resizeMode="cover"
-      />
-    </View>
-  );
-};
 
-// Custom Input Component
-const CustomInput = ({ label, value, onChangeText, placeholder, keyboardType = 'default' }) => {
-  return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.inputLabel}>{label}</Text>
-      <TextInput
-        style={styles.input}
-        value={value}
-        onChangeText={onChangeText}
-        placeholder={placeholder}
-        keyboardType={keyboardType}
-      />
-    </View>
-  );
-};
-
-// Custom Button Component
-const CustomButton = ({ title, onPress, color = '#2196F3' }) => {
-  return (
-    <TouchableOpacity 
-      style={[styles.button, { backgroundColor: color }]}
-      onPress={onPress}
-    >
-      <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
-  );
-};
 
 const TodoScreen = () => {
   const dispatch = useDispatch();
@@ -114,7 +79,7 @@ const TodoScreen = () => {
       mau_sac,
       gia_ban: parseFloat(gia_ban),
       mo_ta,
-      hinh_anh: hinh_anh ? hinh_anh : 'https://via.placeholder.com/150',
+      hinh_anh: hinh_anh ? hinh_anh : 'https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg',
     };
 
     try {
@@ -220,37 +185,11 @@ const TodoScreen = () => {
 
   // Render todo item
   const renderItem = ({ item }) => (
-    <View style={styles.todoItem}>
-      <View style={styles.todoInfo}>
-        <Text style={styles.todoTitle}>{item.ten_xe_PH1234}</Text>
-        <Text>Màu sắc: {item.mau_sac}</Text>
-        <Text>Giá bán: {item.gia_ban.toLocaleString('vi-VN')} VNĐ</Text>
-        {item.mo_ta && <Text>Mô tả: {item.mo_ta}</Text>}
-      </View>
-      
-      {item.hinh_anh && (
-        <Image 
-          source={{ uri: item.hinh_anh }} 
-          style={styles.todoImage} 
-        />
-      )}
-      
-      <View style={styles.todoActions}>
-        <TouchableOpacity 
-          style={[styles.actionButton, styles.editButton]}
-          onPress={() => handleEdit(item)}
-        >
-          <Text style={styles.actionButtonText}>Sửa</Text>
-        </TouchableOpacity>
-        
-        <TouchableOpacity 
-          style={[styles.actionButton, styles.deleteButton]}
-          onPress={() => handleDelete(item.id)}
-        >
-          <Text style={styles.actionButtonText}>Xóa</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <TodoItem 
+      item={item} 
+      onEdit={handleEdit} 
+      onDelete={handleDelete} 
+    />
   );
 
   return (
@@ -277,31 +216,10 @@ const TodoScreen = () => {
       <ScrollView>
         <Banner />
         
-        <View style={styles.filterContainer}>
-          <Text style={styles.filterTitle}>Bộ lọc:</Text>
-          <View style={styles.filterButtons}>
-            <TouchableOpacity 
-              style={[styles.filterButton, filter === 'ALL' && styles.activeFilter]}
-              onPress={() => dispatch(setFilter('ALL'))}
-            >
-              <Text>Tất cả</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.filterButton, filter === 'PRICE_HIGH' && styles.activeFilter]}
-              onPress={() => dispatch(setFilter('PRICE_HIGH'))}
-            >
-              <Text>Giá > 50tr</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.filterButton, filter === 'PRICE_LOW' && styles.activeFilter]}
-              onPress={() => dispatch(setFilter('PRICE_LOW'))}
-            >
-              <Text>Giá ≤ 50tr</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        <FilterButtons 
+          currentFilter={filter}
+          onFilterChange={(filterValue) => dispatch(setFilter(filterValue))}
+        />
         
         <View style={styles.formContainer}>
           <Text style={styles.formTitle}>{isAddMode ? 'Thêm xe mới' : 'Cập nhật xe'}</Text>
@@ -432,50 +350,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
   },
-  bannerContainer: {
-    height: 150,
-    // backgroundColor: '#2196F3',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  bannerText: {
-    color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  bannerImage: {
-    width: '100%',
-    height: 150,
-    position: 'absolute',
-  },
-  filterContainer: {
-    backgroundColor: 'white',
-    padding: 16,
-    marginHorizontal: 16,
-    marginBottom: 16,
-    borderRadius: 8,
-    elevation: 2,
-  },
-  filterTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  filterButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  filterButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 4,
-    backgroundColor: '#e0e0e0',
-  },
-  activeFilter: {
-    backgroundColor: '#bbdefb',
-  },
   formContainer: {
     backgroundColor: 'white',
     padding: 16,
@@ -489,20 +363,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 16,
   },
-  inputContainer: {
-    marginBottom: 16,
-  },
   inputLabel: {
     fontSize: 14,
     marginBottom: 4,
     fontWeight: '500',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 4,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
   },
   imagePickerContainer: {
     marginBottom: 16,
@@ -527,17 +391,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  button: {
-    flex: 1,
-    padding: 12,
-    borderRadius: 4,
-    alignItems: 'center',
-    marginHorizontal: 4,
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
   listContainer: {
     padding: 16,
   },
@@ -545,46 +398,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 16,
-  },
-  todoItem: {
-    backgroundColor: 'white',
-    padding: 16,
-    borderRadius: 8,
-    marginBottom: 16,
-    elevation: 2,
-  },
-  todoInfo: {
-    marginBottom: 8,
-  },
-  todoTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  todoImage: {
-    width: '100%',
-    height: 150,
-    borderRadius: 4,
-    marginBottom: 8,
-  },
-  todoActions: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-  },
-  actionButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    borderRadius: 4,
-    marginLeft: 8,
-  },
-  actionButtonText: {
-    color: 'white',
-  },
-  editButton: {
-    backgroundColor: '#FFC107',
-  },
-  deleteButton: {
-    backgroundColor: '#F44336',
   },
   emptyText: {
     textAlign: 'center',
