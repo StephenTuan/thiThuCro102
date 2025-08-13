@@ -4,29 +4,31 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 const TodoItem = ({ item, onEdit, onDelete }) => {
   return (
     <View style={styles.todoItem}>
-      <View style={styles.todoInfo}>
-        <Text style={styles.todoTitle}>{item.ten_xe_PH1234}</Text>
-        <Text>Màu sắc: {item.mau_sac}</Text>
-        <Text>Giá bán: {item.gia_ban.toLocaleString('vi-VN')} VNĐ</Text>
-        {item.mo_ta && <Text>Mô tả: {item.mo_ta}</Text>}
+      <View style={{flexDirection:'row'}}>
+        {item.hinh_anh_PH33001 && (
+          <Image
+            source={{ uri: item.hinh_anh_PH33001 }}
+            style={styles.todoImage}
+          />
+        )}
+        <View style={styles.todoInfo}>
+          <Text style={styles.todoTitle}>{item.ten_xe_PH33001}</Text>
+          <Text>Màu sắc: {item.mau_sac_PH33001}</Text>
+          <Text>Giá bán: {item.gia_ban_PH33001} VNĐ</Text>
+          {/* {item.mo_ta_PH33001 && <Text>Mô tả: {item.mo_ta_PH33001}</Text>} */}
+          <Text>Mô tả: {item.mo_ta_PH33001}</Text>
+        </View>
       </View>
-      
-      {item.hinh_anh && (
-        <Image 
-          source={{ uri: item.hinh_anh }} 
-          style={styles.todoImage} 
-        />
-      )}
-      
+
       <View style={styles.todoActions}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[styles.actionButton, styles.editButton]}
           onPress={() => onEdit(item)}
         >
           <Text style={styles.actionButtonText}>Sửa</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity 
+
+        <TouchableOpacity
           style={[styles.actionButton, styles.deleteButton]}
           onPress={() => onDelete(item.id)}
         >
@@ -40,32 +42,31 @@ const TodoItem = ({ item, onEdit, onDelete }) => {
 const styles = StyleSheet.create({
   todoItem: {
     backgroundColor: 'white',
-    padding: 16,
+    padding: 10,
     borderRadius: 8,
     marginBottom: 16,
-    elevation: 2,
   },
   todoInfo: {
-    marginBottom: 8,
+    width: '60%'
   },
   todoTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 4,
   },
   todoImage: {
-    width: '100%',
-    height: 150,
-    borderRadius: 4,
-    marginBottom: 8,
+    width: '40%',
+    height: 100,
+    margin: 5,
+    borderWidth:1,
+    borderColor: 'black',
+    borderRadius:5
   },
   todoActions: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
   actionButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
+    padding:8,
     borderRadius: 4,
     marginLeft: 8,
   },

@@ -15,14 +15,14 @@ const Banner = () => {
 
 const styles = StyleSheet.create({
   bannerContainer: {
-    height: 150,
+    height: 170,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 16,
+    margin:15,
   },
   bannerImage: {
     width: '100%',
-    height: 150,
+    height: 170,
     position: 'absolute',
   },
 });

@@ -1,18 +1,7 @@
-import { 
-  ADD_TODO, 
-  UPDATE_TODO, 
-  DELETE_TODO, 
-  SET_FILTER,
-  FETCH_TODOS,
-  FETCH_TODOS_SUCCESS,
-  FETCH_TODOS_FAILURE 
-} from '../actions/todoAction';
+import { ADD_TODO, UPDATE_TODO, DELETE_TODO, FETCH_TODOS } from '../actions/todoAction';
 
 const initialState = {
-  todos: [],
-  filter: 'ALL', // ALL, PRICE_HIGH, PRICE_LOW
-  loading: false,
-  error: null
+  todos: []
 };
 
 const todoReducer = (state = initialState, action) => {
@@ -20,22 +9,7 @@ const todoReducer = (state = initialState, action) => {
     case FETCH_TODOS:
       return {
         ...state,
-        loading: true,
-        error: null
-      };
-
-    case FETCH_TODOS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
         todos: action.payload
-      };
-
-    case FETCH_TODOS_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload
       };
 
     case ADD_TODO:
@@ -58,12 +32,6 @@ const todoReducer = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.filter(todo => todo.id !== action.payload)
-      };
-
-    case SET_FILTER:
-      return {
-        ...state,
-        filter: action.payload
       };
 
     default:

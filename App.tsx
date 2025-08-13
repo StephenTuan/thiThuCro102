@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { StatusBar, StyleSheet, useColorScheme, View, SafeAreaView } from 'react-native';
+import { StatusBar, useColorScheme, SafeAreaView, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './src/redux/store';
 import TodoScreen from './src/screens/todoScreen';

@@ -2,45 +2,27 @@
   "XeMay": [
     {
       "id": "1",
-      "ten_xe_PH1234": "Honda Wave Alpha",
-      "mau_sac": "Đỏ",
-      "gia_ban": 18000000,
-      "mo_ta": "Xe số phổ thông tiết kiệm nhiên liệu",
-      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
+      "ten_xe_PH33001": "Honda Wave Alpha",
+      "mau_sac_PH33001": "Đỏ",
+      "gia_ban_PH33001": 18000000,
+      "mo_ta_PH33001": "Xe số phổ thông tiết kiệm nhiên liệu",
+      "hinh_anh_PH33001": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
     },
     {
       "id": "2",
-      "ten_xe_PH1234": "Yamaha Exciter 155",
-      "mau_sac": "Xanh",
-      "gia_ban": 52000000,
-      "mo_ta": "Xe côn tay thể thao",
-      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
+      "ten_xe_PH33001": "Yamaha Exciter 155",
+      "mau_sac_PH33001": "Xanh",
+      "gia_ban_PH33001": 52000000,
+      "mo_ta_PH33001": "Xe côn tay thể thao",
+      "hinh_anh_PH33001": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
     },
     {
-      "id": "3",
-      "ten_xe_PH1234": "Suzuki Satria F150",
-      "mau_sac": "Đen",
-      "gia_ban": 55000000,
-      "mo_ta": "Xe côn tay thể thao nhẹ",
-      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg"
-    },
-    {
-      "id": "1754900702178",
-      "ten_xe_PH1234": "Xsr",
-      "mau_sac": "Black",
-      "gia_ban": 100000000,
-      "mo_ta": "Okkkkkk",
-      "hinh_anh": "file:///data/user/0/com.thithu/cache/rn_image_picker_lib_temp_14a787b0-5657-4aa2-b366-6969dea4f9bb.webp",
-      "createdAt": "2025-08-11T08:25:02.178Z"
-    },
-    {
-      "id": "1754900725781",
-      "ten_xe_PH1234": "Ok",
-      "mau_sac": "Ok",
-      "gia_ban": 1972,
-      "mo_ta": "Hhhhhhh",
-      "hinh_anh": "https://images2.thanhnien.vn/528068263637045248/2024/11/11/edit-exciter-3-17312928665861227184593.jpeg",
-      "createdAt": "2025-08-11T08:25:25.781Z"
+      "ten_xe_PH33001": "Suzuki Satria F1500",
+      "mau_sac_PH33001": "Đen",
+      "gia_ban_PH33001": 55000000,
+      "mo_ta_PH33001": "Xe côn tay thể thao nhẹ",
+      "hinh_anh_PH33001": "file:///data/user/0/com.thithu/cache/rn_image_picker_lib_temp_992075dd-fd9f-4297-8fe5-40c181eb7dc7.jpg",
+      "id": "3"
     }
   ]
 }
